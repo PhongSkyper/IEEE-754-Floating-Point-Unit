@@ -1,0 +1,117 @@
+# Quartus II/Prime generated files
+*.rpt
+*.summary
+*.smsg
+*.done
+*.chg
+*.htm
+*.html
+*.eqn
+*.pin
+*.pof
+*.sof
+*.jdi
+*.qws
+*.bak
+*.sopcinfo
+*.jic
+*.map
+*.qarlog
+*.qar
+
+# Quartus directories
+db/
+incremental_db/
+output_files/
+greybox_tmp/
+simulation/modelsim/
+.qsys_edit/
+qdb/
+
+# ModelSim/QuestaSim simulation files
+work/
+*.wlf
+transcript
+vsim.wlf
+*.mti
+*.vstf
+*.ver
+*.vcd
+*.vho
+*.vhd~
+
+# Altera IP files cache
+*_inst.v
+*_inst.vhd
+*_bb.v
+*.ppf
+*.qip~
+
+# Nios II related
+*.sopc_builder
+*.elf
+*.objdump
+
+# TimeQuest
+*.sta.rpt
+
+# Quartus Prime project files (keep these)
+# *.qpf
+# *.qsf
+
+# Compressed files
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+
+# Editor backup files
+*.swp
+*.swo
+*~
+\#*\#
+.#*
+
+# LaTeX temporary files
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.bbl
+*.blg
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Python cache (if any Python scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs
+*.log
+
+# Documentation build artifacts (keep source)
+*.pdf
+*.dvi
+*.ps
+
+# Reports directory (optional - uncomment if you don't want to track reports)
+# 05_reports/*.rpt
+# 05_reports/*.txt
