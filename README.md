@@ -51,17 +51,15 @@ A hardware implementation of a 32-bit IEEE 754 floating-point adder/subtractor w
 
 ### Top Module: `fpu_add_sub_top`
 
-```systemverilog
-module fpu_add_sub_top (
-    input  logic [31:0] i_a,          // First operand (IEEE 754 format)
-    input  logic [31:0] i_b,          // Second operand (IEEE 754 format)
-    input  logic        i_add_sub,    // 0 = Addition, 1 = Subtraction
-    output logic [31:0] o_z,          // Result (IEEE 754 format)
-    output logic        o_overflow,   // Overflow flag
-    output logic        o_underflow,  // Underflow flag
-    output logic        o_zero        // Zero result flag
-);
-```
+| Port Name      | Direction | Width  | Description                                      |
+|----------------|-----------|--------|--------------------------------------------------|
+| `i_a`          | Input     | 32-bit | First operand (IEEE 754 format)                  |
+| `i_b`          | Input     | 32-bit | Second operand (IEEE 754 format)                 |
+| `i_add_sub`    | Input     | 1-bit  | Operation select (0 = Addition, 1 = Subtraction) |
+| `o_z`          | Output    | 32-bit | Result (IEEE 754 format)                         |
+| `o_overflow`   | Output    | 1-bit  | Overflow flag                                    |
+| `o_underflow`  | Output    | 1-bit  | Underflow flag                                   |
+| `o_zero`       | Output    | 1-bit  | Zero result flag                                 |
 
 ### IEEE 754 Single Precision Format
 
