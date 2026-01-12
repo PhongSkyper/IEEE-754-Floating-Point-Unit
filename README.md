@@ -165,9 +165,9 @@ The project includes extensive test vectors covering:
 
 *Results may vary depending on target FPGA and optimization settings*
 
-- **Target Device**: [Your FPGA device]
-- **Maximum Frequency**: [Your Fmax result]
-- **Logic Elements**: [Your LE count]
+- **Target Device**: Cyclone II
+- **Maximum Frequency**: 28.5 MHz
+- **Logic Elements**: 871 LEs
 - **Timing Constraint**: Refer to `02_constraints/fpu.sdc`
 
 See `05_reports/` for detailed timing analysis.
@@ -188,13 +188,15 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Authors
 
-- **Your Team/Name** - Initial work
+- **Group 3**
+- Faculty of Electrical-Electronics Engineering
+- Department of Electronics
 
 ## Acknowledgments
 
 - IEEE 754 Standard for Floating-Point Arithmetic
-- Course: [Your course name if applicable]
-- Institution: [Your institution if applicable]
+- Course: Digital System Design and Verification
+- Institution: Faculty of Electrical-Electronics Engineering, Department of Electronics
 
 ## References
 
@@ -203,4 +205,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-For questions or support, please open an issue on GitHub or contact [your-email@example.com]
+For questions or support, please open an issue on GitHub or contact [phongnguyens2468@gmail.com]
