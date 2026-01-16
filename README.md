@@ -72,44 +72,47 @@ A hardware implementation of a 32-bit IEEE 754 floating-point adder/subtractor w
 ## Requirements
 
 ### Hardware Synthesis
-- **Intel Quartus Prime** (tested with version 20.1+)
-- **FPGA Board**: Cyclone, Arria, or Stratix series (optional for hardware testing)
+- **Quartus II Web Edition** (Version 13.0sp1 is required for Cyclone II support)
+- **FPGA Board**: Altera Cyclone® II 2C35 FPGA device (e.g., DE2 Board)
 
 ### Simulation
-- **ModelSim** or **QuestaSim**
-- **Alternatively**: Any SystemVerilog-compatible simulator (VCS, Xcelium, Verilator)
+- **Cadence Xcelium** (tested with Xcelium Parallel Logic Simulator)
 
 ## Quick Start
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/32-bit-fpu.git
-cd 32-bit-fpu
+git clone [https://github.com/PhongSkyper/IEEE-754-Floating-Point-Unit.git](https://github.com/PhongSkyper/IEEE-754-Floating-Point-Unit.git)
+cd IEEE-754-Floating-Point-Unit
 ```
 
 ### 2. Simulation
 
-Using ModelSim/QuestaSim:
+Using Xcelium
 
 ```bash
-# Create work library
-vlib work
-
-# Compile all RTL files
-vlog 01_rtl/*.sv
-
-# Compile testbench
-vlog 04_tb/fpu_add_sub_tb.sv
-
-# Run simulation
-vsim -c fpu_add_sub_tb -do "run -all; quit"
+xrun -sv \
+    01_rtl/fpu_basic_lib.sv \
+    01_rtl/fpu_special_case.sv \
+    01_rtl/fpu_unpack_pretest.sv \
+    01_rtl/fpu_exponent_subtractor.sv \
+    01_rtl/fpu_swap_operands.sv \
+    01_rtl/fpu_align_shift_right.sv \
+    01_rtl/fpu_sign_computation.sv \
+    01_rtl/fpu_sig_add_sub.sv \
+    01_rtl/fpu_normalization.sv \
+    01_rtl/fpu_add_sub_top.sv \
+    04_tb/fpu_add_sub_tb.sv \
+    -access +rwc
 ```
+Or you can use *filelist.f* instead of include all of those code file.
+
 
 ### 3. Synthesis (Quartus)
 
 ```bash
-# Open Quartus project
+# Open Quartus project (Ensure you are using Quartus II 13.0sp1)
 quartus_sh --project fpu_add_sub_top.qpf
 
 # Run synthesis
@@ -172,13 +175,30 @@ See `05_reports/` for detailed timing analysis.
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit issues or pull requests.
+Contributions are welcome! Whether you find a bug in the specific corner cases or want to optimize the CLA adder, feel free to submit issues or pull requests.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. **Fork** the repository.
+2. **Create** your feature branch:
+   ```bash
+   git checkout -b feature/optimize-normalization
+   # or
+   git checkout -b fix/nan-handling-bug
+   ```
+
+3. **Commit** your changes:
+
+```bash
+git commit -m 'Fix: Incorrect rounding for Subnormal numbers'
+```
+
+4. **Push** to the branch:
+
+```bash
+git push origin feature/optimize-normalization
+Open a Pull Request.
+```
+
+*Note:* Please ensure all test cases in 04_tb/fpu_add_sub_tb.sv pass before submitting your PR.
 
 ## License
 
