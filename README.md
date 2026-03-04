@@ -153,9 +153,7 @@ The FPU pipeline consists of the following stages:
 
 ### Top-Level Datapath
 
-![Top-Level Datapath](06_docs/top_level.png)
-
-![Top-Level Datapath (Detail)](06_docs/top_level_1.png)
+![Top-Level Schematic](06_docs/schematic.png)
 
 ### Stage 1 – Unpack & Pretest
 
