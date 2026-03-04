@@ -149,6 +149,46 @@ The FPU pipeline consists of the following stages:
 8. **Normalization**: Normalize result and adjust exponent
 9. **Pack & Flag**: Assemble final IEEE 754 format and set exception flags
 
+## Datapath Diagrams
+
+### Top-Level Datapath
+
+![Top-Level Datapath](06_docs/top_level.png)
+
+![Top-Level Datapath (Detail)](06_docs/top_level_1.png)
+
+### Stage 1 – Unpack & Pretest
+
+![Unpack & Pretest Datapath](06_docs/unpack_pretest_datapath.png)
+
+### Stage 2 – Special Case Handling
+
+![Special Case Datapath](06_docs/special_case.png)
+
+### Stage 3 – Operand Swap
+
+![Swap Operands Datapath](06_docs/swap_operands.png)
+
+### Stage 4 – Exponent Subtraction
+
+![Exponent Subtractor Datapath](06_docs/exponent_subtractor.png)
+
+### Stage 5 – Alignment (Shift Right)
+
+![Align Shift Right Datapath](06_docs/align_shift_right.png)
+
+### Stage 6 – Sign Computation
+
+![Sign Computation Datapath](06_docs/sign_computation.png)
+
+### Stage 7 – Significand Add/Sub
+
+![Significand Add/Sub Datapath](06_docs/sign_add_sub.png)
+
+### Stage 8 – Normalization
+
+![Normalization Datapath](06_docs/normalization.png)
+
 ## Testing
 
 The project includes extensive test vectors covering:
